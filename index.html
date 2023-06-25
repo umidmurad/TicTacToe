@@ -10,23 +10,27 @@
 
   <br />
   <div id="board">
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickXHandler(event)"></div>
-    <div class="cell" onclick="clickOHandler(event)"></div>
+
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
+    <div class="cell" onclick="clickHandler(event)"></div>
   </div>
   <br />
-  <p class="mid" style="display: none">
+  <p class="mid" id="winnerP" style="display: none">
     Winner: <span id="winner">Who Won?</span>
   </p>
-  <p class="mid">Turn: <span id="turn">Who's Turn?</span></p>
-  <p class="mid" style="color: red">You: X</p>
-  <p class="mid" style="color: lightblue">AI: O</p>
+  <p class="mid" id="turnP">
+    Turn: <span style="color: red" id="turn">You</span>
+  </p>
+  <p class="mid">Your symbol: <span style="color: red"> X</span></p>
+  <p class="mid">AI's symbol:<span style="color: lightblue"> O</span></p>
+
   <br />
 
   <div class="mid">
@@ -41,5 +45,5 @@
 </body>
 
 <footer class="bottommid">
-  <script src="/main.js"></script>
+  <script src="main.js"></script>
 </footer>
