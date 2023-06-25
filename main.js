@@ -76,3 +76,4 @@ function myWebsite() {
 function reset() {
   window.location.href = "/";
 }
+
