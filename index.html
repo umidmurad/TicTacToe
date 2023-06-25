@@ -6,7 +6,34 @@
 
 <body>
   <h1 class="mid">Tic Tac Toe</h1>
+  <br />
 
+  <br />
+  <div id="board">
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickXHandler(event)"></div>
+    <div class="cell" onclick="clickOHandler(event)"></div>
+  </div>
+  <br />
+  <p class="mid" style="display: none">
+    Winner: <span id="winner">Who Won?</span>
+  </p>
+  <p class="mid">Turn: <span id="turn">Who's Turn?</span></p>
+  <p class="mid" style="color: red">You: X</p>
+  <p class="mid" style="color: lightblue">AI: O</p>
+  <br />
+
+  <div class="mid">
+    <button class="button" onclick="reset()">Reset Game</button>
+    <button class="button" onclick="myWebsite()">Home Page</button>
+  </div>
+  <hr />
   <div class="mid">
     <h3>Built in Progress..</h3>
     <div class="loader"></div>
@@ -14,8 +41,5 @@
 </body>
 
 <footer class="bottommid">
-  <button class="button">
-    <a href="/">Back to Website</a>
-  </button>
   <script src="/main.js"></script>
 </footer>
