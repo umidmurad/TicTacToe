@@ -10,21 +10,20 @@
 
   <br />
   <div id="board">
-
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
-    <div class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell1" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell2" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell3" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell4" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell5" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell6" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell7" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell8" class="cell" onclick="clickHandler(event)"></div>
+    <div id="cell9" class="cell" onclick="clickHandler(event)"></div>
   </div>
   <br />
-  <p class="mid" id="winnerP" style="display: none">
-    Winner: <span id="winner">Who Won?</span>
-  </p>
+  <h1 class="mid" id="winnerP" style="display: none">
+    Game is Over! <span style="color: red" id="winner">Who Won?</span>
+  </h1>
   <p class="mid" id="turnP">
     Turn: <span style="color: red" id="turn">You</span>
   </p>
@@ -37,11 +36,11 @@
     <button class="button" onclick="reset()">Reset Game</button>
     <button class="button" onclick="myWebsite()">Home Page</button>
   </div>
-  <hr />
-  <div class="mid">
+
+  <!-- <div class="mid">
     <h3>Built in Progress..</h3>
     <div class="loader"></div>
-  </div>
+  </div> -->
 </body>
 
 <footer class="bottommid">
