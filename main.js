@@ -23,7 +23,7 @@ function clickHandler(event) {
     cellClicked = true;
 
     // Play click sound
-    var clickSound = new Audio("me-sound.wav");
+    var clickSound = new Audio("Sounds/me-sound.wav");
     clickSound.play();
     clickSound.volume = 0.5;
     // Set the content of the cell to "X"
@@ -62,10 +62,10 @@ function clickHandler(event) {
         // Place the "O" in the randomly selected empty cell
 
         // Play AI sound
-        var aiSound = new Audio("ai-sound.wav");
+        var aiSound = new Audio("Sounds/ai-sound.wav");
         aiSound.play();
         aiSound.volume = 0.5;
-  
+
         randomCell.innerHTML = "O";
         randomCell.style.color = "lightblue";
         turnO = false;
@@ -78,8 +78,14 @@ function clickHandler(event) {
       }, 500);
     } else {
       //Somebody wins here or it's a tie
+      //This section hits when last play is made, either somebody just won or it is a tie
+      // whoWon();
+      // winnerP.style.display = "block";
+      // winnerName.innerHTML = "It is a tie!";
+      // turnP.style.display = "none";
+
       winnerP.style.display = "block";
-      winnerName.innerHTML = "It is a tie!";
+      winnerName.innerHTML = "Umid";
       turnP.style.display = "none";
     }
   }
@@ -108,10 +114,9 @@ function whoWon() {
     (cell3 === "X" && cell5 === "X" && cell7 === "X")
   ) {
     //Winning Sound
-    if(soundOn)
-      {var winSound = new Audio("win.wav");
-      winSound.play();
-      winSound.volume = 0.5;}
+    var winSound = new Audio("Sounds/win.wav");
+    winSound.play();
+    winSound.volume = 0.5;
 
     winnerP.style.display = "block";
     winnerName.innerHTML = "You Won!";
@@ -128,7 +133,7 @@ function whoWon() {
     (cell3 === "O" && cell5 === "O" && cell7 === "O")
   ) {
     //Losing Sound
-    var loseSound = new Audio("lose.wav");
+    var loseSound = new Audio("Sounds/lose.wav");
     loseSound.play();
     loseSound.volume = 0.5;
     winnerP.style.display = "block";
@@ -141,9 +146,16 @@ function whoWon() {
       return cell.innerHTML !== "";
     })
   ) {
+    //Tie Sound
+    var tieSound = new Audio("Sounds/tie.wav");
+    //Delay half a second before sound plays
     winnerP.style.display = "block";
     winnerName.innerHTML = "It is a tie!";
     turnP.style.display = "none";
+    setTimeout(function () {
+      tieSound.play();
+      tieSound.volume = 0.5;
+    }, 500);
     endGame();
   }
 }
