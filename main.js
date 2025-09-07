@@ -22,6 +22,10 @@ function clickHandler(event) {
   if (cell.innerHTML === "" && turnX && !turnO) {
     cellClicked = true;
 
+    // Play click sound
+    var clickSound = new Audio("me-sound.wav");
+    clickSound.play();
+    clickSound.volume = 0.5;
     // Set the content of the cell to "X"
     cell.innerHTML = "X";
     cell.style.color = "red";
@@ -56,6 +60,12 @@ function clickHandler(event) {
 
       setTimeout(function () {
         // Place the "O" in the randomly selected empty cell
+
+        // Play AI sound
+        var aiSound = new Audio("ai-sound.wav");
+        aiSound.play();
+        aiSound.volume = 0.5;
+  
         randomCell.innerHTML = "O";
         randomCell.style.color = "lightblue";
         turnO = false;
@@ -69,7 +79,7 @@ function clickHandler(event) {
     } else {
       //Somebody wins here or it's a tie
       winnerP.style.display = "block";
-      winnerName.innerHTML = "Umid";
+      winnerName.innerHTML = "It is a tie!";
       turnP.style.display = "none";
     }
   }
@@ -97,6 +107,12 @@ function whoWon() {
     (cell1 === "X" && cell5 === "X" && cell9 === "X") ||
     (cell3 === "X" && cell5 === "X" && cell7 === "X")
   ) {
+    //Winning Sound
+    if(soundOn)
+      {var winSound = new Audio("win.wav");
+      winSound.play();
+      winSound.volume = 0.5;}
+
     winnerP.style.display = "block";
     winnerName.innerHTML = "You Won!";
     turnP.style.display = "none";
@@ -111,6 +127,10 @@ function whoWon() {
     (cell1 === "O" && cell5 === "O" && cell9 === "O") ||
     (cell3 === "O" && cell5 === "O" && cell7 === "O")
   ) {
+    //Losing Sound
+    var loseSound = new Audio("lose.wav");
+    loseSound.play();
+    loseSound.volume = 0.5;
     winnerP.style.display = "block";
     winnerName.innerHTML = "AI Won!";
     turnP.style.display = "none";
