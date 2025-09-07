@@ -38,7 +38,6 @@ Here are some ideas for possible future enhancements to the AI Tic-Tac-Toe game:
 
 1. Improve the AI opponent: Enhance the AI algorithm to make it more challenging and intelligent.
 2. Implement different difficulty levels: Add different difficulty levels for the AI opponent, allowing players to choose the level of challenge.
-3. Add sound effects and animations: Incorporate sound effects and animations to enhance the gaming experience.
-4. Multiplayer functionality: Implement multiplayer functionality, allowing players to play against each other locally or over a network.
+3. Multiplayer functionality: Implement multiplayer functionality, allowing players to play against each other locally or over a network.
 
 Feel free to fork the project and make any modifications or improvements you desire!
