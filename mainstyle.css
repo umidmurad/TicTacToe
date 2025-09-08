@@ -13,9 +13,15 @@ a {
   text-decoration: none;
 }
 
+.top-writing {
+  text-align: center;
+  margin: auto;
+  font-size: 80px;
+}
 .mid {
   text-align: center;
   margin: auto;
+  font-size: 40px;
 }
 
 .bottommid {
