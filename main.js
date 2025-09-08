@@ -8,6 +8,36 @@ var cellClicked = false;
 var board = document.getElementById("board");
 var gameEnded = false;
 
+// Global variable to track sound status
+var SoundOn = true;
+
+// Function to mute sounds
+function muteSounds() {
+  SoundOn = false;
+  document.querySelector(".button[onclick='muteSounds()']").style.display =
+    "none";
+  document.querySelector(".button[onclick='unmuteSounds()']").style.display =
+    "inline-block";
+}
+
+// Function to unmute sounds
+function unmuteSounds() {
+  SoundOn = true;
+  document.querySelector(".button[onclick='unmuteSounds()']").style.display =
+    "none";
+  document.querySelector(".button[onclick='muteSounds()']").style.display =
+    "inline-block";
+}
+
+// Example: Modify sound playback based on SoundOn
+function playSound(soundPath) {
+  if (SoundOn) {
+    var sound = new Audio(soundPath);
+    sound.volume = 0.5;
+    sound.play();
+  }
+}
+
 function clickHandler(event) {
   // Check if a cell has already been clicked
   if (cellClicked) {
@@ -23,9 +53,7 @@ function clickHandler(event) {
     cellClicked = true;
 
     // Play click sound
-    var clickSound = new Audio("Sounds/me-sound.wav");
-    clickSound.volume = 0.5;
-    clickSound.play();
+    playSound("Sounds/me-sound.wav");
     // Set the content of the cell to "X"
     cell.innerHTML = "X";
     cell.style.color = "red";
@@ -62,9 +90,7 @@ function clickHandler(event) {
         // Place the "O" in the randomly selected empty cell
 
         // Play AI sound
-        var aiSound = new Audio("Sounds/ai-sound.wav");
-        aiSound.volume = 0.5;
-        aiSound.play();
+        playSound("Sounds/ai-sound.wav");
 
         randomCell.innerHTML = "O";
         randomCell.style.color = "lightblue";
@@ -103,9 +129,7 @@ function whoWon() {
     (cell3 === "X" && cell5 === "X" && cell7 === "X")
   ) {
     //Winning Sound
-    var winSound = new Audio("Sounds/win.wav");
-    winSound.volume = 0.5;
-    winSound.play();
+    playSound("Sounds/win.wav");
 
     winnerP.style.display = "block";
     winnerName.innerHTML = "You Won!";
@@ -122,9 +146,7 @@ function whoWon() {
     (cell3 === "O" && cell5 === "O" && cell7 === "O")
   ) {
     //Losing Sound
-    var loseSound = new Audio("Sounds/lose.wav");
-    loseSound.volume = 0.5;
-    loseSound.play();
+    playSound("Sounds/lose.wav");
 
     winnerP.style.display = "block";
     winnerName.innerHTML = "AI Won!";
@@ -137,14 +159,12 @@ function whoWon() {
     })
   ) {
     //Tie Sound
-    var tieSound = new Audio("Sounds/tie.wav");
     //Delay half a second before sound plays
     winnerP.style.display = "block";
     winnerName.innerHTML = "It is a tie!";
     turnP.style.display = "none";
     setTimeout(function () {
-      tieSound.volume = 0.5;
-      tieSound.play();
+      playSound("Sounds/tie.wav");
     }, 500);
     endGame();
   }
